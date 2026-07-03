@@ -3,6 +3,18 @@ import { FieldDef } from '../ports/fixed-width-parser.port';
 // src/core/layouts/sigtap-layouts.ts
 export type TableLayout = { file: string; fields: FieldDef[] };
 export const SIGTAP_LAYOUTS: Record<string, TableLayout> = {
+  RL_EXCECAO_COMPATIBILIDADE: {
+    file: 'rl_excecao_compatibilidade.txt',
+    fields: [
+      { name: 'co_procedimento_restricao', start: 1, end: 10, trim: true },
+      { name: 'co_procedimento_principal', start: 11, end: 20, trim: true },
+      { name: 'co_registro_principal', start: 21, end: 22, trim: true },
+      { name: 'co_procedimento_compatível', start: 23, end: 32, trim: true },
+      { name: 'co_registro_compatível', start: 33, end: 34, trim: true },
+      { name: 'tp_compatibilidade', start: 35, end: 35, trim: true },
+      { name: 'dt_competencia', start: 36, end: 41, trim: true },
+    ],
+  },
   TB_GRUPO: {
     file: 'tb_grupo.txt',
     fields: [
@@ -88,6 +100,49 @@ export const SIGTAP_LAYOUTS: Record<string, TableLayout> = {
       { name: 'tp_sexo', start: 106, end: 106, trim: true },
       { name: 'tp_estadio', start: 107, end: 107, trim: true },
       { name: 'vl_campos_irradiados', start: 108, end: 111, trim: true },
+    ],
+  },
+  RL_PROCEDIMENTO_COMPONENTE_REDE: {
+    file: 'rl_procedimento_componente_rede.txt',
+    fields: [
+      { name: 'co_procedimento', start: 1, end: 10, trim: true },
+      { name: 'co_componente_rede', start: 11, end: 20, trim: true },
+    ],
+  },
+  RL_PROCEDIMENTO_DETALHE: {
+    file: 'rl_procedimento_detalhe.txt',
+    fields: [
+      { name: 'co_procedimento', start: 1, end: 10, trim: true },
+      { name: 'co_detalhe', start: 11, end: 13, trim: true },
+      { name: 'dt_competencia', start: 14, end: 19, trim: true },
+    ],
+  },
+  RL_PROCEDIMENTO_HABILITACAO: {
+    file: 'rl_procedimento_habilitacao.txt',
+    fields: [
+      { name: 'co_procedimento', start: 1, end: 10, trim: true },
+      { name: 'co_habilitacao', start: 11, end: 14, trim: true },
+      { name: 'nu_grupo_habilitacao', start: 15, end: 18, trim: true },
+      { name: 'dt_competencia', start: 19, end: 24, trim: true },
+    ],
+  },
+  RL_PROCEDIMENTO_INCREMENTO: {
+    file: 'rl_procedimento_incremento.txt',
+    fields: [
+      { name: 'co_procedimento', start: 1, end: 10, trim: true },
+      { name: 'co_habilitacao', start: 11, end: 14, trim: true },
+      { name: 'vl_percentual_sh', start: 15, end: 21, trim: true },
+      { name: 'vl_percentual_sa', start: 22, end: 28, trim: true },
+      { name: 'vl_percentual_sp', start: 29, end: 35, trim: true },
+      { name: 'dt_competencia', start: 36, end: 41, trim: true },
+    ],
+  },
+  RL_PROCEDIMENTO_LEITO: {
+    file: 'rl_procedimento_leito.txt',
+    fields: [
+      { name: 'co_procedimento', start: 1, end: 10, trim: true },
+      { name: 'co_tipo_leito', start: 11, end: 12, trim: true },
+      { name: 'dt_competencia', start: 13, end: 18, trim: true },
     ],
   },
 };
