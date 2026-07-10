@@ -1,6 +1,5 @@
-// core/domain/repositories/sigtap-repository.interface.ts
-
 import { SigtapCid } from "../entities/cid";
+import { ChangeLog } from "../entities/change-log";
 import { SigtapFormaOrganizacao } from "../entities/forma-organizacao";
 import { SigtapGrupo } from "../entities/grupo";
 import { SigtapProcedimento } from "../entities/procedimento";
@@ -8,7 +7,38 @@ import { SigtapProcedimentoCid } from "../entities/procedimento-cid";
 import { SigtapProcedimentoCompativel } from "../entities/procedimento-compativel";
 import { SigtapProcedimentoCompetencia } from "../entities/procedimento-competencia";
 import { SigtapSubGrupo } from "../entities/sub-grupo";
-
+import { SigtapModalidade } from "../entities/modalidade";
+import { SigtapHabilitacao } from "../entities/habilitacao";
+import { SigtapGrupoHabilitacao } from "../entities/grupo-habilitacao";
+import { SigtapDetalhe } from "../entities/detalhe";
+import { SigtapFinanciamento } from "../entities/financiamento";
+import { SigtapComponenteRede } from "../entities/componente-rede";
+import { SigtapRedeAtencao } from "../entities/rede-atencao";
+import { SigtapRegistro } from "../entities/registro";
+import { SigtapRegraCondicionada } from "../entities/regra-condicionada";
+import { SigtapRenases } from "../entities/renases";
+import { SigtapRubrica } from "../entities/rubrica";
+import { SigtapServico } from "../entities/servico";
+import { SigtapServicoClassificacao } from "../entities/servico-classificacao";
+import { SigtapSiaSih } from "../entities/sia-sih";
+import { SigtapTuss } from "../entities/tuss";
+import { SigtapOcupacao } from "../entities/ocupacao";
+import { SigtapDescricao } from "../entities/descricao";
+import { SigtapDescricaoDetalhe } from "../entities/descricao-detalhe";
+import { SigtapProcedimentoHabilitacao } from "../entities/procedimento-habilitacao";
+import { SigtapProcedimentoIncremento } from "../entities/procedimento-incremento";
+import { SigtapProcedimentoLeito } from "../entities/procedimento-leito";
+import { SigtapProcedimentoModalidade } from "../entities/procedimento-modalidade";
+import { SigtapProcedimentoOcupacao } from "../entities/procedimento-ocupacao";
+import { SigtapProcedimentoOrigem } from "../entities/procedimento-origem";
+import { SigtapProcedimentoRegistro } from "../entities/procedimento-registro";
+import { SigtapProcedimentoRegraCond } from "../entities/procedimento-regra-cond";
+import { SigtapProcedimentoRenases } from "../entities/procedimento-renases";
+import { SigtapProcedimentoServico } from "../entities/procedimento-servico";
+import { SigtapProcedimentoSiaSih } from "../entities/procedimento-sia-sih";
+import { SigtapProcedimentoTuss } from "../entities/procedimento-tuss";
+import { SigtapProcedimentoCompRede } from "../entities/procedimento-comp-rede";
+import { SigtapProcedimentoDetalhe } from "../entities/procedimento-detalhe";
 
 export const ISigtapRepository = Symbol('ISigtapRepository');
 export interface ISigtapRepository {
@@ -20,5 +50,38 @@ export interface ISigtapRepository {
   saveProcedimentoCids(rows: SigtapProcedimentoCid[]): Promise<void>;
   saveProcedimentoCompetencias(rows: SigtapProcedimentoCompetencia[]): Promise<void>;
   saveProcedimentoCompativeis(rows: SigtapProcedimentoCompativel[]): Promise<void>;
+  saveModalidades(rows: SigtapModalidade[]): Promise<void>;
+  saveHabilitacoes(rows: SigtapHabilitacao[]): Promise<void>;
+  saveGrupoHabilitacoes(rows: SigtapGrupoHabilitacao[]): Promise<void>;
+  saveDetalhes(rows: SigtapDetalhe[]): Promise<void>;
+  saveFinanciamentos(rows: SigtapFinanciamento[]): Promise<void>;
+  saveComponenteRedes(rows: SigtapComponenteRede[]): Promise<void>;
+  saveRedeAtencoes(rows: SigtapRedeAtencao[]): Promise<void>;
+  saveRegistros(rows: SigtapRegistro[]): Promise<void>;
+  saveRegraCondicionadas(rows: SigtapRegraCondicionada[]): Promise<void>;
+  saveRenases(rows: SigtapRenases[]): Promise<void>;
+  saveRubricas(rows: SigtapRubrica[]): Promise<void>;
+  saveServicos(rows: SigtapServico[]): Promise<void>;
+  saveServicoClassificacoes(rows: SigtapServicoClassificacao[]): Promise<void>;
+  saveSiaSihs(rows: SigtapSiaSih[]): Promise<void>;
+  saveTusses(rows: SigtapTuss[]): Promise<void>;
+  saveOcupacoes(rows: SigtapOcupacao[]): Promise<void>;
+  saveDescricoes(rows: SigtapDescricao[]): Promise<void>;
+  saveDescricaoDetalhes(rows: SigtapDescricaoDetalhe[]): Promise<void>;
+  saveProcedimentoHabilitacoes(rows: SigtapProcedimentoHabilitacao[]): Promise<void>;
+  saveProcedimentoIncrementos(rows: SigtapProcedimentoIncremento[]): Promise<void>;
+  saveProcedimentoLeitos(rows: SigtapProcedimentoLeito[]): Promise<void>;
+  saveProcedimentoModalidades(rows: SigtapProcedimentoModalidade[]): Promise<void>;
+  saveProcedimentoOcupacoes(rows: SigtapProcedimentoOcupacao[]): Promise<void>;
+  saveProcedimentoOrigens(rows: SigtapProcedimentoOrigem[]): Promise<void>;
+  saveProcedimentoRegistros(rows: SigtapProcedimentoRegistro[]): Promise<void>;
+  saveProcedimentoRegraConds(rows: SigtapProcedimentoRegraCond[]): Promise<void>;
+  saveProcedimentoRenases(rows: SigtapProcedimentoRenases[]): Promise<void>;
+  saveProcedimentoServicos(rows: SigtapProcedimentoServico[]): Promise<void>;
+  saveProcedimentoSiaSihs(rows: SigtapProcedimentoSiaSih[]): Promise<void>;
+  saveProcedimentoTusses(rows: SigtapProcedimentoTuss[]): Promise<void>;
+  saveProcedimentoCompRedes(rows: SigtapProcedimentoCompRede[]): Promise<void>;
+  saveProcedimentoDetalhes(rows: SigtapProcedimentoDetalhe[]): Promise<void>;
+  getRecentLogs(competencia: string): Promise<ChangeLog[]>;
 }
 

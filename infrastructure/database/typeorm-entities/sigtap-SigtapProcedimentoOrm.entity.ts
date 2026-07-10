@@ -6,7 +6,7 @@ export class SigtapProcedimentoOrm {
   @PrimaryColumn({ name: 'co_procedimento', type: 'varchar', length: 10 })
   co_procedimento: string;
 
-  @Column({ name: 'dt_competencia', type: 'varchar', length: 6 })
+  @PrimaryColumn({ name: 'dt_competencia', type: 'varchar', length: 6 })
   dt_competencia: string;
 
   @Column({ name: 'no_procedimento', type: 'varchar', length: 255 })
